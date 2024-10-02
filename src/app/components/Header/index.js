@@ -21,7 +21,7 @@ export default function Header() {
           Contacto
         </Link>
       </nav>
-      <UserMenu />
+      <UserMenu/>
     </header>
   );
 }

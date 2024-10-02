@@ -21,26 +21,26 @@
 
 /* Efecto hover para los botones */
 .userMenu button:hover {
-  background-color: #9D82A5; /* Color más claro en hover */
+  background-color: #d41900; /* Color más claro en hover */
   transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
 }
 
 /* Botón de Iniciar Sesión específico */
 .userMenu button:first-child {
-  background-color: #5C2E70; /* Color para diferenciar Iniciar Sesión */
+  background-color: #ff523b; /* Color para diferenciar Iniciar Sesión */
 }
 
 .userMenu button:first-child:hover {
-  background-color: #7C3E98; /* Hover específico para Iniciar Sesión */
+  background-color: #d41900; /* Hover específico para Iniciar Sesión */
 }
 
 /* Botón de Registrarse específico */
 .userMenu button:last-child {
-  background-color: #805797; /* Color distintivo para Registrarse */
+  background-color: #ff523b; /* Color distintivo para Registrarse */
 }
 
 .userMenu button:last-child:hover {
-  background-color: #A678B5; /* Hover específico para Registrarse */
+  background-color: #d41900; /* Hover específico para Registrarse */
 }
 
 /* Estilo del mensaje de bienvenida */
