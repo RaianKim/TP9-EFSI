@@ -43,6 +43,7 @@ export default function Login() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className={styles['login-container']}
         />
         <input
           type="password"
@@ -50,8 +51,9 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className={styles['login-container']}
         />
-        <button type="submit">Ingresar</button>
+        <button className={styles['login-container']} type="submit">Ingresar</button>
       </form>
     </div>
   );

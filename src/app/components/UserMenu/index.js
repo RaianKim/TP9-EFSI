@@ -26,10 +26,10 @@ export default function UserMenu() {
     ) : (
       <div>
         <Link href="/login">
-          <button className={styles.button}>Iniciar Sesión</button>
+          <button className={styles.button1}>Iniciar Sesión</button>
         </Link>
         <Link href="/register">
-          <button className={styles.button}>Registrarse</button>
+          <button className={styles.button2}>Registrarse</button>
         </Link>
       </div>
     )}

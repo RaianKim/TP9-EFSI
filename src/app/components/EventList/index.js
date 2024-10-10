@@ -8,13 +8,13 @@ export default function EventList() {
       <h1>Listado de Eventos</h1>
       <ul>
         <li>
-          <Link href="/eventos/1">Evento 1</Link>
+          <Link className="link" href="/eventos/1"><button>Evento 1</button></Link>
         </li>
         <li>
-          <Link href="/eventos/2">Evento 2</Link>
+          <Link className="link" href="/eventos/2"><button>Evento 2</button></Link>
         </li>
         <li>
-          <Link href="/eventos/3">Evento 3</Link>
+          <Link className="link" href="/eventos/3"><button>Evento 3</button></Link>
         </li>
       </ul>
     </div>

@@ -10,6 +10,7 @@
   position: sticky; /* El header permanece en la parte superior al hacer scroll */
   top: 0;
   z-index: 1000;
+  font-family: "Poppins";
 }
 
 /* Logo Container */
@@ -86,4 +87,8 @@
   align-items: center;
   justify-content: flex-end; /* El menú de usuario se alinea a la derecha */
   margin-left: auto;
+}
+.login-container
+{
+  font-family: "Poppins";
 }

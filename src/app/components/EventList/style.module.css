@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .eventList {
   padding: 40px;
   padding-top: 0;
@@ -15,12 +17,18 @@
   justify-content: center;
 }
 
+.link
+{
+  color: inherit; 
+  text-decoration: none
+}
+
 .eventList h1 {
   font-size: 38px;
-  color: #602B5F; /* Color principal de tu paleta */
-  font-family: 'Amatic SC', cursive; /* Aplicar la tipografía Amatic SC */
+  color: #da502d; 
+  font-family: "poppins"; 
   
-  font-weight: 400; /* Peso más fino */
+  font-weight: 400; 
 }
 
 .eventList ul {
@@ -28,19 +36,15 @@
   padding: 0;
 }
 
-.eventList li {
-  background-color: #D9D8EA; /* Fondo claro de tu paleta */
-  color: #602B5F; /* Texto con el color principal */
+.eventList li button {
+  background-color: #D9D8EA; 
+  flex: "block";
+  color: #f74f1d; 
   margin: 10px 0;
   padding: 20px;
   font-size: 24px;
   border-radius: 8px;
-  font-family: 'Arial', sans-serif; /* Tipografía secundaria */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Agrega una sombra ligera */
+  font-family: "Poppins"; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
   transition: transform 0.3s ease;
-}
-
-.eventList li:hover {
-  transform: scale(1.05); /* Efecto de hover para mejorar la apariencia */
-  background-color: #BCA0DC; /* Color de hover */
 }

@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .contact-container {
     padding: 20px;
     max-width: 600px;
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: left;
+    font-family: "Poppins"; 
   }
   
   .contact-container h1 {
     margin:0;
-    font-size: 48px; /* Tamaño grande para el título */
-    color: #602B5F; /* Color del título */
-    font-family: 'Amatic SC', cursive; /* Tipografía estilizada */
-    font-weight: 400; /* Peso de letra más fino */
-    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 48px; 
+    color: #602B5F; 
+    font-family: "Poppins";
+    font-weight: 400; 
+    margin-bottom: 20px;
   }
   
   .contact-container p {
-    font-size: 20px; /* Tamaño del texto */
-    color: #0a1128; /* Color del texto */
-    margin: 10px 0; /* Espacio entre los párrafos */
+    font-size: 20px; 
+    color: #0a1128; 
+    margin: 10px 0; 
   }
   

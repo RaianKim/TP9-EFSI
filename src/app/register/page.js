@@ -45,6 +45,7 @@ export default function Register() {
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           required
+          className={styles.registerFontFamily}
         />
         <input
           type="text"
@@ -52,6 +53,7 @@ export default function Register() {
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           required
+          className={styles.registerFontFamily}
         />
         <input
           type="email"
@@ -59,6 +61,7 @@ export default function Register() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className={styles.registerFontFamily}
         />
         <input
           type="password"
@@ -66,8 +69,9 @@ export default function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          className={styles.registerFontFamily}
         />
-        <button type="submit">Registrarse</button>
+        <button className={styles.registerFontFamily} type="submit">Registrarse</button>
       </form>
     </div>
   );
