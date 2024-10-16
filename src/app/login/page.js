@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { useState,useContext } from "react";
 import { useRouter } from "next/navigation"; // Usar useRouter para redirigir después del login
 import { TokenContext } from "../context/TokenContext";
+import axios from "axios";
 
 export default function Login() {
   const { saveToken } = useContext(TokenContext);
@@ -11,40 +12,20 @@ export default function Login() {
   const router = useRouter();
 
   const login = async () => {
-    e.preventDefault();
 
-    const res = await fetch("http://localhost:4000/api/user/login", {
+    const res = await axios.post ("/api/user/login", {
       username: user,
       password: pass,
-      /*const res = await fetch("http://localhost:4000/api/user/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Enviar el email con el nombre "username" en el body de la solicitud
-      body: JSON.stringify({ username: email, password }),
-    });*/
     });
   };
 
-  const handleLogin = async (e) => {
+  const handleLogin = async () => {
     try {
       const response = await login();
       saveToken(response.data.token);
       router.push("/");
     } catch (error) {
       console.log(error);
-    }
-
-    const data = await res.json(); // Procesa la respuesta como JSON
-
-    if (res.ok && data.success) {
-      // Guarda el token en localStorage
-      localStorage.setItem("token", data.token);
-      // Redirige a la página principal después del login
-      router.push("/");
-    } else {
-      alert("Error al iniciar sesión: " + data.message);
     }
   };
 

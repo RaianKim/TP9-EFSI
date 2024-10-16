@@ -7,9 +7,8 @@ import { useContext } from "react";
 export const ProtectedRoutes = ({ children }) => {
   const router = useRouter();
   const { isLoggedIn } = useContext(TokenContext);
-  const path = window.location.pathname;
 
-  if (!isLoggedIn && /*router.pathname*/  path !== "/login") {
+  if (!isLoggedIn && router.pathname == '/login') {
     return <h2> Acceso Restringido</h2>;
   }
 
