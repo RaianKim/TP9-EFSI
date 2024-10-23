@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useEffect, createContext, useState } from "react";
 
@@ -16,7 +16,7 @@ const TokenProvider = ({ children }) => {
   }, []);
 
   const saveToken = (newToken) => {
-    localStorgae.setItem("token", newToken);
+    localStorage.setItem("token", newToken); // Corregido de localStorgae a localStorage
     setToken(newToken);
   };
 

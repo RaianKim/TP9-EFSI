@@ -19,10 +19,19 @@ export default function Register() {
         },
         body: JSON.stringify({ first_name: firstName, last_name: lastName, username: email, password }),
       });
-      
-      const data = await res.json();
-
-      if (res.ok) { // Usa `res.ok` para verificar si la respuesta fue exitosa
+  
+      const contentType = res.headers.get('content-type');
+      let data;
+  
+      // Verifica si la respuesta es JSON
+      if (contentType && contentType.includes('application/json')) {
+        data = await res.json();
+      } else {
+        const text = await res.text();
+        throw new Error(`Response not JSON: ${text}`);
+      }
+  
+      if (res.ok) {
         // Guardar token en localStorage
         localStorage.setItem('token', data.token);
         // Redirigir al usuario a la página principal
@@ -32,9 +41,9 @@ export default function Register() {
       }
     } catch (error) {
       console.error('Error en el registro:', error);
+      alert('Error en el registro: ' + error.message); // Muestra el mensaje de error
     }
   };
-
   return (
     <div className={styles.registerConteiner}>
       <h1>Registrarse</h1>
