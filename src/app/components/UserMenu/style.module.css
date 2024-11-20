@@ -1,56 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .userMenu {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Alinea los botones al final */
-  gap: 15px; /* Espacio entre los botones */
-  font-family: "Poppins";
+  justify-content: flex-end; 
+  gap: 15px; 
 }
 
-/* Botones principales: Iniciar Sesión y Registrarse */
 .userMenu button {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 500;
-  font-family: "Poppins";
   color: #fff;
-  background-color: #602B5F; /* Fondo oscuro */
+  margin: 5px;
+  background-color: #df3941; 
   border: none;
-  border-radius: 25px; /* Bordes redondeados */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+  border-radius: 25px; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins';
 }
 
-/* Efecto hover para los botones */
-.userMenu button:hover {
-  background-color: #d41900; /* Color más claro en hover */
-  transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
-}
-
-/* Botón de Iniciar Sesión específico */
 .userMenu button:first-child {
-  background-color: #ff523b; /* Color para diferenciar Iniciar Sesión */
+  background-color: #df3941;
 }
 
 .userMenu button:first-child:hover {
-  background-color: #d41900; /* Hover específico para Iniciar Sesión */
+  background-color: #d3141e; 
 }
 
-/* Botón de Registrarse específico */
 .userMenu button:last-child {
-  background-color: #ff523b; /* Color distintivo para Registrarse */
+  background-color: #df3941; 
 }
 
 .userMenu button:last-child:hover {
-  background-color: #d41900; /* Hover específico para Registrarse */
+  background-color: #d3141e; 
 }
 
-/* Estilo del mensaje de bienvenida */
 .userMenu p {
   font-size: 18px;
   font-weight: 500;
-  color: #3C2A4D; /* Color oscuro */
-  margin-right: 20px; /* Espaciado antes de los botones */
+  color: #df3941; 
+  margin-right: 20px; 
 }
 
 /* Estilo responsivo */
@@ -63,9 +52,4 @@
   .userMenu p {
     font-size: 16px;
   }
-}
-
-.button1
-{
-  margin-right: 10px;
 }

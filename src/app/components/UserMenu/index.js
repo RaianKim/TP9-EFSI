@@ -1,38 +1,40 @@
 "use client"; // Asegúrate de que el archivo sea un Client Component
 import styles from './style.module.css';
-import { useState, useEffect } from 'react';
-import jwt_decode from 'jwt-decode'; // Importar jwt-decode
-import Link from 'next/link'; // Importar Link para redirigir
+import { useState, useEffect, useContext } from 'react';
+import Link from 'next/link'; 
+import { TokenContext } from "../../context/TokenContext";
 
 export default function UserMenu() {
-  const [user, setUser] = useState(null);
+  const { token, name, setToken,logout } = useContext(TokenContext);
+  const borrarLS = () => {
+    logout(); 
+    window.location.href = '/'; 
+  };
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     try {
-  //       const decoded = jwt_decode(token);
-  //       setUser(decoded.username); // Ajusta según la estructura del token
-  //     } catch (error) {
-  //       console.error('Error al decodificar el token:', error);
-  //     }
-  //   }
-  // }, []);
 
   return (
     <div className={styles.userMenu}>
-    {user ? (
-      <p>Bienvenido, {user}</p>
-    ) : (
-      <div>
-        <Link href="/login">
-          <button className={styles.button1}>Iniciar Sesión</button>
-        </Link>
-        <Link href="/register">
-          <button className={styles.button2}>Registrarse</button>
-        </Link>
-      </div>
-    )}
-  </div>
+      {token ? (
+        <div>
+          <p>{name}</p>
+          <Link href="/FormularioEvento">
+
+          <button className={styles.button}>Crear Evento</button>
+          </Link>
+
+          <button className={styles.button} onClick={borrarLS}>Cerrar Sesión</button>
+          
+        </div>
+      ) : (
+        <div>
+          <Link href="/login">
+            <button className={styles.button}>Iniciar Sesión</button>
+          </Link>
+          <Link href="/register">
+            <button className={styles.button}>Registrarse</button>
+          </Link>
+        </div>
+      )}
+    </div>
   );
 }

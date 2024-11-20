@@ -1,17 +1,21 @@
-"use client";
+'use client';
 
 import { TokenContext } from "../context/TokenContext";
 import { useRouter } from "next/navigation";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export const ProtectedRoutes = ({ children }) => {
   const router = useRouter();
+  const pathname = usePathname();
   const { isLoggedIn } = useContext(TokenContext);
 
-  const isLoginPage = router.pathname === "/login";
+    if (!isLoggedIn && (pathname.startsWith("/eventos/")  || pathname === "/FormularioEvento")) {
+      router.push("/login"); 
+    }
 
-  if (!isLoggedIn && /*!*/isLoginPage) {
-    return <h2>Acceso Restringido</h2>;
-  }
-  return children;
+    
+  
+
+  return <>{children}</>;
 };

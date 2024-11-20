@@ -1,0 +1,85 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.eventItem a, .eventItem .next-link {
+  text-decoration: none; 
+}
+
+
+.title {
+  color: #df3941;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Poppins';
+}
+
+
+
+.eventList {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.eventItem {
+  background-color: #D9D8EA;
+  border: 2px solid #f89a7e;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.eventItem:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.eventLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 20px;
+}
+
+.eventContent {
+  padding: 10px;
+}
+
+.eventName {
+  color: #df3941;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-family: 'Poppins';
+}
+
+.eventDescription {
+  font-size: 1rem;
+  color: #4A4A4A;
+  margin-bottom: 15px;
+  font-family: 'Poppins';
+}
+
+.eventDate, .eventPrice {
+  font-size: 1rem;
+  color: #f33f27;
+  font-family: 'Poppins';
+}
+
+.eventDate strong, .eventPrice strong {
+  color: #9c2a30;
+}
+
+.loading {  
+  text-align: center;
+  font-size: 1.5rem;
+  color: #df3941;
+  font-family: 'Poppins';
+}

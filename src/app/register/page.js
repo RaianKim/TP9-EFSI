@@ -1,7 +1,7 @@
-"use client"; // Marca este archivo como un Client Component
+"use client"; 
 import styles from './page.module.css';
 import { useState } from 'react';
-import { usePathname } from 'next/navigation'; // Usa usePathname para obtener la ruta actual
+import { usePathname } from 'next/navigation'; 
 
 export default function Register() {
   const [firstName, setFirstName] = useState('');
@@ -17,33 +17,20 @@ export default function Register() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ first_name: firstName, last_name: lastName, username: email, password }),
+        body: JSON.stringify({ first_name: firstName, last_name: lastName, username: email, password: password }),
       });
-  
-      const contentType = res.headers.get('content-type');
-      let data;
-  
-      // Verifica si la respuesta es JSON
-      if (contentType && contentType.includes('application/json')) {
-        data = await res.json();
+
+
+      if (res.statusText== "Created") { 
+        window.location.href = '/login'; 
       } else {
-        const text = await res.text();
-        throw new Error(`Response not JSON: ${text}`);
-      }
-  
-      if (res.ok) {
-        // Guardar token en localStorage
-        localStorage.setItem('token', data.token);
-        // Redirigir al usuario a la página principal
-        window.location.href = '/'; // Redirección manual
-      } else {
-        alert('Error al registrarse: ' + data.message);
+        alert('Error al registrarse');
       }
     } catch (error) {
       console.error('Error en el registro:', error);
-      alert('Error en el registro: ' + error.message); // Muestra el mensaje de error
     }
   };
+
   return (
     <div className={styles.registerConteiner}>
       <h1>Registrarse</h1>
@@ -54,7 +41,6 @@ export default function Register() {
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           required
-          className={styles.registerFontFamily}
         />
         <input
           type="text"
@@ -62,7 +48,6 @@ export default function Register() {
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           required
-          className={styles.registerFontFamily}
         />
         <input
           type="email"
@@ -70,7 +55,6 @@ export default function Register() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className={styles.registerFontFamily}
         />
         <input
           type="password"
@@ -78,9 +62,8 @@ export default function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          className={styles.registerFontFamily}
         />
-        <button className={styles.registerFontFamily} type="submit">Registrarse</button>
+        <button type="submit">Registrarse</button>
       </form>
     </div>
   );

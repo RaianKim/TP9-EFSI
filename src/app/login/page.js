@@ -3,6 +3,7 @@ import styles from './page.module.css';
 import { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { TokenContext } from "../context/TokenContext";
+import { setCookie } from 'nookies';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -25,9 +26,20 @@ export default function Login() {
       const data = await res.json();
 
       if (res.ok) {
-        console.log(data.result.first_name)
-        saveToken(data.token); 
-        router.push('/'); 
+        // Establecer el nombre en el contexto
+        setName(data.result.username); 
+        
+        // Guardar el token en cookies con una expiración de 30 días
+        setCookie(null, 'user', data.token, {
+          path: '/',            
+          maxAge: 30 * 24 * 60 * 60,  
+        });
+
+        // Llamar a la función saveToken, si la necesitas en tu contexto
+        saveToken(data.token);
+        
+        // Redirigir al usuario a la página principal
+        window.location.href = '/';
       } else {
         alert('Error al iniciar sesión: ' + data.message);
       }
